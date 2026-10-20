@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción - Complejo Arqueológico Ingapirca</title>
+</head>
+<body>
+
+    <h1>Complejo Arqueológico Ingapirca</h1>
+    <h2>Encuesta de Satisfacción</h2>
+    <p class="texto-centrado">
+        Tu opinión nos ayuda a mejorar la experiencia de los
+        visitantes y a cuidar este patrimonio.       
+    </p>
+
+    <hr>
+    <form action="#" method="post">
+
+        <!-- SECCIÓN 1: DATOS DEL VISITANTE -->
+        <fieldset>
+            <legend>Datos del visitante</legend>
+
+            <!-- Pregunta 1: caja de texto -->
+            <p>
+                <label for="nombre">1. Nombre (opcional):</label><br>
+                <input type="text" id="nombre" name="nombre" size="40" placeholder="Escriba su nombre">
+            </p>
+
+            <!-- Pregunta 2: correo electrónico -->
+            <p>
+                <label for="correo">2. Correo electrónico (opcional):</label><br>
+                <input type="email" id="correo" name="correo" size="40" placeholder="ejemplo@correo.com">
+            </p>
+
+            <!-- Pregunta 3: número -->
+            <p>
+                <label for="edad">3. Edad (*):</label><br>
+                <input type="number" id="edad" name="edad" min="5" max="110" required>
+            </p>
+
+            <!-- Pregunta 4: lista desplegable -->
+            <p>
+                <label for="procedencia">4. Lugar de procedencia (*):</label><br>
+                <select id="procedencia" name="procedencia" required>
+                    <option value="">-- Seleccione una opción --</option>
+                    <option value="canar">Provincia del Cañar</option>
+                    <option value="azuay">Provincia del Azuay</option>
+                    <option value="otra_provincia">Otra provincia del Ecuador</option>
+                    <option value="sudamerica">Otro país de Sudamérica</option>
+                    <option value="norteamerica">Norteamérica</option>
+                    <option value="europa">Europa</option>
+                    <option value="otro_continente">Otro continente</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 2: SOBRE LA VISITA -->
+        <fieldset>
+            <legend>Sobre su visita</legend>
+
+            <!-- Pregunta 5: fecha -->
+            <p>
+                <label for="fecha_visita">5. Fecha de su visita (*):</label><br>
+                <input type="date" id="fecha_visita" name="fecha_visita" required>
+            </p>
+
+            <!-- Pregunta 6: botones de radio -->
+            <p>
+                6. ¿Con quién realizó la visita? (*)<br>
+                <input type="radio" id="solo" name="compania" value="solo" required>
+                <label for="solo">Solo/a</label><br>
+                <input type="radio" id="pareja" name="compania" value="pareja">
+                <label for="pareja">En pareja</label><br>
+                <input type="radio" id="familia" name="compania" value="familia">
+                <label for="familia">En familia</label><br>
+                <input type="radio" id="amigos" name="compania" value="amigos">
+                <label for="amigos">Con amigos</label><br>
+                <input type="radio" id="institucion" name="compania" value="institucion">
+                <label for="institucion">Grupo escolar, universitario o institucional</label><br>
+                <input type="radio" id="tour" name="compania" value="tour">
+                <label for="tour">Tour organizado por una agencia</label>
+            </p>
+
+            <!-- Pregunta 7: casillas de verificación -->
+            <p>
+                7. ¿Qué sitios y atractivos visitó durante su recorrido? (puede marcar varios)<br>
+                <input type="checkbox" id="templo_sol" name="sitios" value="templo_sol">
+                <label for="templo_sol">Templo del Sol (Castillo)</label><br>
+                <input type="checkbox" id="museo" name="sitios" value="museo">
+                <label for="museo">Museo de sitio</label><br>
+                <input type="checkbox" id="nan" name="sitios" value="nan">
+                <label for="nan">Ñan (Camino del Inca)</label><br>
+                <input type="checkbox" id="cara_inca" name="sitios" value="cara_inca">
+                <label for="cara_inca">Cara del Inca</label><br>
+                <input type="checkbox" id="intihuaycu" name="sitios" value="intihuaycu">
+                <label for="intihuaycu">Intihuaycu</label><br>
+                <input type="checkbox" id="pilaloma" name="sitios" value="pilaloma">
+                <label for="pilaloma">Pilaloma</label><br>
+                <input type="checkbox" id="artesanias" name="sitios" value="artesanias">
+                <label for="artesanias">Tienda de artesanías</label>
+            </p>
+
+            <!-- Pregunta 8: radio -->
+            <p>
+                8. ¿Es la primera vez que visita Ingapirca? (*)<br>
+                <input type="radio" id="primera_si" name="primera_vez" value="si" required>
+                <label for="primera_si">Sí, es mi primera visita</label><br>
+                <input type="radio" id="primera_no" name="primera_vez" value="no">
+                <label for="primera_no">No, ya lo había visitado antes</label>
+            </p>
+
+            <!-- Pregunta 9: casillas de verificación -->
+            <p>
+                9. ¿Cómo se enteró de la existencia del complejo? (puede marcar varios)<br>
+                <input type="checkbox" id="redes" name="medio" value="redes">
+                <label for="redes">Redes sociales</label><br>
+                <input type="checkbox" id="recomendacion" name="medio" value="recomendacion">
+                <label for="recomendacion">Recomendación de familiares o amigos</label><br>
+                <input type="checkbox" id="agencia" name="medio" value="agencia">
+                <label for="agencia">Agencia de viajes</label><br>
+                <input type="checkbox" id="internet" name="medio" value="internet">
+                <label for="internet">Páginas web o buscadores</label><br>
+                <input type="checkbox" id="institucion_edu" name="medio" value="institucion_edu">
+                <label for="institucion_edu">Institución educativa</label><br>
+                <input type="checkbox" id="otro_medio" name="medio" value="otro">
+                <label for="otro_medio">Otro</label>
+                <input type="text" id="otro_medio_texto" name="otro_medio_texto" placeholder="¿Cuál?">
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 3: EVALUACIÓN DEL SERVICIO -->
+        <fieldset>
+            <legend>Evaluación de servicios e instalaciones</legend>
+
+            <!-- Pregunta 10: radio (escala) -->
+            <p>
+                10. ¿Cómo califica la atención recibida por el personal del complejo? (*)<br>
+                <input type="radio" id="atencion5" name="atencion" value="5" required>
+                <label for="atencion5">Excelente</label><br>
+                <input type="radio" id="atencion4" name="atencion" value="4">
+                <label for="atencion4">Muy buena</label><br>
+                <input type="radio" id="atencion3" name="atencion" value="3">
+                <label for="atencion3">Buena</label><br>
+                <input type="radio" id="atencion2" name="atencion" value="2">
+                <label for="atencion2">Regular</label><br>
+                <input type="radio" id="atencion1" name="atencion" value="1">
+                <label for="atencion1">Mala</label>
+            </p>
+
+            <!-- Pregunta 11: radio (guía) -->
+            <p>
+                11. ¿Recibió el servicio de guía turístico? (*)<br>
+                <input type="radio" id="guia_si" name="guia" value="si" required>
+                <label for="guia_si">Sí</label><br>
+                <input type="radio" id="guia_no" name="guia" value="no">
+                <label for="guia_no">No</label>
+            </p>
+
+            <!-- Pregunta 12: lista desplegable (evaluación del guía) -->
+            <p>
+                <label for="calidad_guia">12. Si recibió guía, ¿qué tan clara y completa fue la explicación?</label><br>
+                <select id="calidad_guia" name="calidad_guia">
+                    <option value="">-- Seleccione una opción --</option>
+                    <option value="muy_clara">Muy clara y completa</option>
+                    <option value="clara">Clara</option>
+                    <option value="aceptable">Aceptable</option>
+                    <option value="confusa">Confusa o incompleta</option>
+                    <option value="no_aplica">No aplica</option>
+                </select>
+            </p>
+
+            <!-- Pregunta 13: control deslizante -->
+            <p>
+                <label for="limpieza">13. Del 1 (muy mala) al 10 (excelente), ¿cómo califica la limpieza y el mantenimiento del complejo?</label><br>
+                1 <input type="range" id="limpieza" name="limpieza" min="1" max="10" value="5"> 10
+            </p>
+
+            <!-- Pregunta 14: casillas de verificación (aspectos a mejorar) -->
+            <p>
+                14. ¿Qué aspectos considera que se deben mejorar? (puede marcar varios)<br>
+                <input type="checkbox" id="mej_senalizacion" name="mejorar" value="senalizacion">
+                <label for="mej_senalizacion">Señalización y orientación</label><br>
+                <input type="checkbox" id="mej_banos" name="mejorar" value="banos">
+                <label for="mej_banos">Servicios higiénicos</label><br>
+                <input type="checkbox" id="mej_parqueadero" name="mejorar" value="parqueadero">
+                <label for="mej_parqueadero">Parqueadero</label><br>
+                <input type="checkbox" id="mej_alimentos" name="mejorar" value="alimentos">
+                <label for="mej_alimentos">Servicio de alimentación</label><br>
+                <input type="checkbox" id="mej_informacion" name="mejorar" value="informacion">
+                <label for="mej_informacion">Información sobre la historia del sitio</label><br>
+                <input type="checkbox" id="mej_accesibilidad" name="mejorar" value="accesibilidad">
+                <label for="mej_accesibilidad">Accesibilidad para personas con movilidad reducida</label><br>
+                <input type="checkbox" id="mej_seguridad" name="mejorar" value="seguridad">
+                <label for="mej_seguridad">Seguridad</label><br>
+                <input type="checkbox" id="mej_ninguno" name="mejorar" value="ninguno">
+                <label for="mej_ninguno">Ninguno, todo me pareció adecuado</label>
+            </p>
+
+            <!-- Pregunta 15: radio (precio) -->
+            <p>
+                15. Considerando lo que recibió, el costo de la entrada le pareció: (*)<br>
+                <input type="radio" id="precio_alto" name="precio" value="alto" required>
+                <label for="precio_alto">Alto</label><br>
+                <input type="radio" id="precio_justo" name="precio" value="justo">
+                <label for="precio_justo">Justo</label><br>
+                <input type="radio" id="precio_bajo" name="precio" value="bajo">
+                <label for="precio_bajo">Bajo</label>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 4: SATISFACCIÓN GENERAL -->
+        <fieldset>
+            <legend>Satisfacción general</legend>
+
+            <!-- Pregunta 16: radio -->
+            <p>
+                16. En general, ¿qué tan satisfecho/a quedó con su visita? (*)<br>
+                <input type="radio" id="sat5" name="satisfaccion" value="5" required>
+                <label for="sat5">Muy satisfecho/a</label><br>
+                <input type="radio" id="sat4" name="satisfaccion" value="4">
+                <label for="sat4">Satisfecho/a</label><br>
+                <input type="radio" id="sat3" name="satisfaccion" value="3">
+                <label for="sat3">Neutral</label><br>
+                <input type="radio" id="sat2" name="satisfaccion" value="2">
+                <label for="sat2">Insatisfecho/a</label><br>
+                <input type="radio" id="sat1" name="satisfaccion" value="1">
+                <label for="sat1">Muy insatisfecho/a</label>
+            </p>
+
+            <!-- Pregunta 17: radio -->
+            <p>
+                17. ¿Recomendaría el Complejo Arqueológico Ingapirca a otras personas? (*)<br>
+                <input type="radio" id="rec_si" name="recomendaria" value="si" required>
+                <label for="rec_si">Sí, definitivamente</label><br>
+                <input type="radio" id="rec_quiza" name="recomendaria" value="quiza">
+                <label for="rec_quiza">Tal vez</label><br>
+                <input type="radio" id="rec_no" name="recomendaria" value="no">
+                <label for="rec_no">No</label>
+            </p>
+
+            <!-- Pregunta 18: área de texto -->
+            <p>
+                <label for="comentarios_gusto">18. ¿Qué fue lo que más le gustó de su visita?</label><br>
+                <textarea id="comentarios_gusto" name="comentarios_gusto" rows="4" cols="60"></textarea>
+            </p>
+
+            <!-- Pregunta 19: área de texto -->
+            <p>
+                <label for="sugerencias">19. Escriba sus sugerencias o comentarios para mejorar el complejo:</label><br>
+                <textarea id="sugerencias" name="sugerencias" rows="5" cols="60"></textarea>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 5: CONFIRMACIÓN -->
+        <p>
+            <input type="checkbox" id="acepta" name="acepta" value="si" required>
+            <label for="acepta">Acepto que mis respuestas sean usadas con fines de mejora del servicio turístico (*)</label>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar encuesta">
+            <input type="reset" value="Borrar respuestas">
+        </p>
+
+    </form>
+    <hr>
+    <p>¡Muchas gracias por su tiempo y por visitar el Complejo Arqueológico Ingapirca!</p>
+
+</body>
+</html>

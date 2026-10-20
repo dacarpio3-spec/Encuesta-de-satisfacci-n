@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción - Complejo Arqueológico Ingapirca</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --bs-body-font-family: "Geist", system-ui, sans-serif;
+        --bs-font-mono: "Geist Mono", ui-monospace, monospace;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- IMAGEN DE FONDO (solo clases de Bootstrap) -->
+    <img src="src/fondo murrallas.jpg.jpeg" alt=""
+         class="position-fixed top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+
+    <main class="container py-4 py-md-5">
+
+        <!-- ENCABEZADO -->
+        <header class="bg-dark bg-opacity-75 text-white text-center rounded-4 shadow p-4 mb-4">
+            <h1 class="display-5 fw-bold">Complejo Arqueológico Ingapirca</h1>
+            <h2 class="h4 text-warning">Encuesta de Satisfacción</h2>
+            <p class="lead mb-0">
+                Tu opinión nos ayuda a mejorar la experiencia de los
+                visitantes y a cuidar este patrimonio.
+            </p>
+        </header>
+
+        <form action="#" method="post">
+
+            <!-- SECCIÓN 1: DATOS DEL VISITANTE -->
+            <div class="card bg-dark bg-opacity-75 border-0 shadow rounded-4 mb-4">
+                <div class="card-header bg-warning text-white rounded-top-4 fw-semibold">
+                    Sección 1 de 4
+                </div>
+                <div class="card-body p-4">
+                    <fieldset>
+                        <legend class="fs-4 fw-bold text-warning border-bottom pb-2 mb-3">Datos del visitante</legend>
+
+                        <div class="row g-3">
+                            <!-- Pregunta 1 -->
+                            <div class="col-md-6 text-white">
+                                <label for="nombre" class="form-label">1. Nombre (opcional):</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Escriba su nombre">
+                            </div>
+
+                            <!-- Pregunta 2 -->
+                            <div class="col-md-6 text-white">
+                                <label for="correo" class="form-label">2. Correo electrónico (opcional):</label>
+                                <input type="email" id="correo" name="correo" class="form-control" placeholder="ejemplo@correo.com">
+                            </div>
+
+                            <!-- Pregunta 3 -->
+                            <div class="col-md-4 text-white">
+                                <label for="edad" class="form-label">3. Edad <span class="text-danger">(*)</span>:</label>
+                                <input type="number" id="edad" name="edad" class="form-control" min="5" max="110" required>
+                            </div>
+
+                            <!-- Pregunta 4 -->
+                            <div class="col-md-8 text-white">
+                                <label for="procedencia" class="form-label">4. Lugar de procedencia <span class="text-danger">(*)</span>:</label>
+                                <select id="procedencia" name="procedencia" class="form-select" required>
+                                    <option value="">-- Seleccione una opción --</option>
+                                    <option value="canar">Provincia del Cañar</option>
+                                    <option value="azuay">Provincia del Azuay</option>
+                                    <option value="otra_provincia">Otra provincia del Ecuador</option>
+                                    <option value="sudamerica">Otro país de Sudamérica</option>
+                                    <option value="norteamerica">Norteamérica</option>
+                                    <option value="europa">Europa</option>
+                                    <option value="otro_continente">Otro continente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: SOBRE LA VISITA -->
+            <div class="card bg-dark bg-opacity-75 border-0 shadow rounded-4 mb-4">
+                <div class="card-header bg-warning text-white rounded-top-4 fw-semibold">
+                    Sección 2 de 4
+                </div>
+                <div class="card-body p-4">
+                    <fieldset>
+                        <legend class="fs-4 fw-bold text-warning border-bottom pb-2 mb-3">Sobre su visita</legend>
+
+                        <!-- Pregunta 5 -->
+                        <div class="mb-4 text-white">
+                            <label for="fecha_visita" class="form-label">5. Fecha de su visita <span class="text-danger">(*)</span>:</label>
+                            <input type="date" id="fecha_visita" name="fecha_visita" class="form-control w-auto" required>
+                        </div>
+
+                        <!-- Pregunta 6 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">6. ¿Con quién realizó la visita? <span class="text-danger">(*)</span></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="solo" name="compania" value="solo" required>
+                                <label class="form-check-label" for="solo">Solo/a</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="pareja" name="compania" value="pareja">
+                                <label class="form-check-label" for="pareja">En pareja</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="familia" name="compania" value="familia">
+                                <label class="form-check-label" for="familia">En familia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="amigos" name="compania" value="amigos">
+                                <label class="form-check-label" for="amigos">Con amigos</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="institucion" name="compania" value="institucion">
+                                <label class="form-check-label" for="institucion">Grupo escolar, universitario o institucional</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="tour" name="compania" value="tour">
+                                <label class="form-check-label" for="tour">Tour organizado por una agencia</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 7 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">7. ¿Qué sitios y atractivos visitó durante su recorrido? </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="templo_sol" name="sitios" value="templo_sol">
+                                        <label class="form-check-label" for="templo_sol">Templo del Sol (Castillo)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="museo" name="sitios" value="museo">
+                                        <label class="form-check-label" for="museo">Museo de sitio</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="nan" name="sitios" value="nan">
+                                        <label class="form-check-label" for="nan">Ñan (Camino del Inca)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="cara_inca" name="sitios" value="cara_inca">
+                                        <label class="form-check-label" for="cara_inca">Cara del Inca</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="intihuaycu" name="sitios" value="intihuaycu">
+                                        <label class="form-check-label" for="intihuaycu">Intihuaycu</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="pilaloma" name="sitios" value="pilaloma">
+                                        <label class="form-check-label" for="pilaloma">Pilaloma</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="artesanias" name="sitios" value="artesanias">
+                                        <label class="form-check-label" for="artesanias">Tienda de artesanías</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 8 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">8. ¿Es la primera vez que visita Ingapirca? <span class="text-danger">(*)</span></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="primera_si" name="primera_vez" value="si" required>
+                                <label class="form-check-label" for="primera_si">Sí, es mi primera visita</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="primera_no" name="primera_vez" value="no">
+                                <label class="form-check-label" for="primera_no">No, ya lo había visitado antes</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 9 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2 text-white">9. ¿Cómo se enteró de la existencia del complejo? </p>
+                            <div class="form-check text-white">
+                                <input class="form-check-input" type="checkbox" id="redes" name="medio" value="redes">
+                                <label class="form-check-label" for="redes">Redes sociales</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="recomendacion" name="medio" value="recomendacion">
+                                <label class="form-check-label" for="recomendacion">Recomendación de familiares o amigos</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agencia" name="medio" value="agencia">
+                                <label class="form-check-label" for="agencia">Agencia de viajes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="internet" name="medio" value="internet">
+                                <label class="form-check-label" for="internet">Páginas web o buscadores</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="institucion_edu" name="medio" value="institucion_edu">
+                                <label class="form-check-label" for="institucion_edu">Institución educativa</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="otro_medio" name="medio" value="otro">
+                                <label class="form-check-label" for="otro_medio">Otro</label>
+                            </div>
+                            <input type="text" id="otro_medio_texto" name="otro_medio_texto" class="form-control form-control-sm w-50 mt-2" placeholder="¿Cuál?">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: EVALUACIÓN DEL SERVICIO -->
+            <div class="card bg-dark bg-opacity-75 border-0 shadow rounded-4 mb-4">
+                <div class="card-header bg-warning text-white rounded-top-4 fw-semibold">
+                    Sección 3 de 4
+                </div>
+                <div class="card-body p-4">
+                    <fieldset>
+                        <legend class="fs-4 fw-bold text-warning border-bottom pb-2 mb-3">Evaluación de servicios e instalaciones</legend>
+
+                        <!-- Pregunta 10 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">10. ¿Cómo califica la atención recibida por el personal del complejo? <span class="text-danger">(*)</span></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="atencion5" name="atencion" value="5" required>
+                                <label class="form-check-label" for="atencion5">Excelente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="atencion4" name="atencion" value="4">
+                                <label class="form-check-label" for="atencion4">Muy buena</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="atencion3" name="atencion" value="3">
+                                <label class="form-check-label" for="atencion3">Buena</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="atencion2" name="atencion" value="2">
+                                <label class="form-check-label" for="atencion2">Regular</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="atencion1" name="atencion" value="1">
+                                <label class="form-check-label" for="atencion1">Mala</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 11 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">11. ¿Recibió el servicio de guía turístico? <span class="text-danger">(*)</span></p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="guia_si" name="guia" value="si" required>
+                                <label class="form-check-label" for="guia_si">Sí</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="guia_no" name="guia" value="no">
+                                <label class="form-check-label" for="guia_no">No</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 12 -->
+                        <div class="mb-4 text-white">
+                            <label for="calidad_guia" class="form-label">12. Si recibió guía, ¿qué tan clara y completa fue la explicación?</label>
+                            <select id="calidad_guia" name="calidad_guia" class="form-select">
+                                <option value="">-- Seleccione una opción --</option>
+                                <option value="muy_clara">Muy clara y completa</option>
+                                <option value="clara">Clara</option>
+                                <option value="aceptable">Aceptable</option>
+                                <option value="confusa">Confusa o incompleta</option>
+                                <option value="no_aplica">No aplica</option>
+                            </select>
+                        </div>
+
+                        <!-- Pregunta 13 -->
+                        <div class="mb-4 text-white">
+                            <label for="limpieza" class="form-label">13. Del 1 (muy mala) al 10 (excelente), ¿cómo califica la limpieza y el mantenimiento del complejo?</label>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge text-bg-danger">1</span>
+                                <input type="range" id="limpieza" name="limpieza" class="form-range" min="1" max="10" value="5">
+                                <span class="badge text-bg-warning">10</span>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 14 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">14. ¿Qué aspectos considera que se deben mejorar?</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_senalizacion" name="mejorar" value="senalizacion">
+                                        <label class="form-check-label" for="mej_senalizacion">Señalización y orientación</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_banos" name="mejorar" value="banos">
+                                        <label class="form-check-label" for="mej_banos">Servicios higiénicos</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_parqueadero" name="mejorar" value="parqueadero">
+                                        <label class="form-check-label" for="mej_parqueadero">Parqueadero</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_alimentos" name="mejorar" value="alimentos">
+                                        <label class="form-check-label" for="mej_alimentos">Servicio de alimentación</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_informacion" name="mejorar" value="informacion">
+                                        <label class="form-check-label" for="mej_informacion">Información sobre la historia del sitio</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_accesibilidad" name="mejorar" value="accesibilidad">
+                                        <label class="form-check-label" for="mej_accesibilidad">Accesibilidad para personas con movilidad reducida</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_seguridad" name="mejorar" value="seguridad">
+                                        <label class="form-check-label" for="mej_seguridad">Seguridad</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="mej_ninguno" name="mejorar" value="ninguno">
+                                        <label class="form-check-label" for="mej_ninguno">Ninguno, todo me pareció adecuado</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 15 -->
+                        <div>
+                            <p class="form-label mb-2 text-white">15. Considerando lo que recibió, el costo de la entrada le pareció: <span class="text-danger">(*)</span></p>
+                            <div class="form-check form-check-inline text-white">
+                                <input class="form-check-input" type="radio" id="precio_alto" name="precio" value="alto" required>
+                                <label class="form-check-label" for="precio_alto">Alto</label>
+                            </div>
+                            <div class="form-check form-check-inline text-white">
+                                <input class="form-check-input" type="radio" id="precio_justo" name="precio" value="justo">
+                                <label class="form-check-label" for="precio_justo">Justo</label>
+                            </div>
+                            <div class="form-check form-check-inline text-white">
+                                <input class="form-check-input" type="radio" id="precio_bajo" name="precio" value="bajo">
+                                <label class="form-check-label" for="precio_bajo">Bajo</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: SATISFACCIÓN GENERAL -->
+            <div class="card bg-dark bg-opacity-75 border-0 shadow rounded-4 mb-4">
+                <div class="card-header bg-warning text-white rounded-top-4 fw-semibold">
+                    Sección 4 de 4
+                </div>
+                <div class="card-body p-4">
+                    <fieldset>
+                        <legend class="fs-4 fw-bold text-warning border-bottom pb-2 mb-3">Satisfacción general</legend>
+
+                        <!-- Pregunta 16 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">16. En general, ¿qué tan satisfecho/a quedó con su visita? <span class="text-danger">(*)</span></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="sat5" name="satisfaccion" value="5" required>
+                                <label class="form-check-label" for="sat5">Muy satisfecho/a</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="sat4" name="satisfaccion" value="4">
+                                <label class="form-check-label" for="sat4">Satisfecho/a</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="sat3" name="satisfaccion" value="3">
+                                <label class="form-check-label" for="sat3">Neutral</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="sat2" name="satisfaccion" value="2">
+                                <label class="form-check-label" for="sat2">Insatisfecho/a</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="sat1" name="satisfaccion" value="1">
+                                <label class="form-check-label" for="sat1">Muy insatisfecho/a</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 17 -->
+                        <div class="mb-4 text-white">
+                            <p class="form-label mb-2">17. ¿Recomendaría el Complejo Arqueológico Ingapirca a otras personas? <span class="text-danger">(*)</span></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="rec_si" name="recomendaria" value="si" required>
+                                <label class="form-check-label" for="rec_si">Sí, definitivamente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="rec_quiza" name="recomendaria" value="quiza">
+                                <label class="form-check-label" for="rec_quiza">Tal vez</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="rec_no" name="recomendaria" value="no">
+                                <label class="form-check-label" for="rec_no">No</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 18 -->
+                        <div class="mb-4 text-white">
+                            <label for="comentarios_gusto" class="form-label">18. ¿Qué fue lo que más le gustó de su visita?</label>
+                            <textarea id="comentarios_gusto" name="comentarios_gusto" class="form-control" rows="4"></textarea>
+                        </div>
+
+                        <!-- Pregunta 19 -->
+                        <div>
+                            <label for="sugerencias" class="form-label text-white">19. Escriba sus sugerencias o comentarios para mejorar el complejo:</label>
+                            <textarea id="sugerencias" name="sugerencias" class="form-control" rows="5"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 5: CONFIRMACIÓN -->
+            <div class="card bg-dark bg-opacity-75 border-0 shadow rounded-4 mb-4">
+                <div class="card-body p-4 text-center">
+                    <div class="form-check d-inline-block text-start mb-3 text-white">
+                        <input class="form-check-input" type="checkbox" id="acepta" name="acepta" value="si" required>
+                        <label class="form-check-label" for="acepta">
+                            Acepto que mis respuestas sean usadas con fines de mejora del servicio turístico <span class="text-danger">(*)</span>
+                        </label>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-2">
+                        <button type="submit" class="btn btn-warning btn-lg px-5">Enviar encuesta</button>
+                        <button type="reset" class="btn btn-outline-danger btn-lg px-5">Borrar respuestas</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- PIE -->
+        <footer class="bg-dark bg-opacity-75 text-white text-center rounded-4 p-3">
+            ¡Muchas gracias por su tiempo y por visitar el Complejo Arqueológico Ingapirca!
+        </footer>
+
+    </main>
+
+</body>
+</html>
